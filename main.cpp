@@ -6,8 +6,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 // Includes
-//Testing Patrick Lee
 // STL
+//testing (Patrick)
 #include <chrono>
 #include <iostream>
 #include <memory>
