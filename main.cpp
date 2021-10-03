@@ -54,12 +54,22 @@ float g_framesPerSecond{0.f};
 
 /*class sphere(){//might have to make a sphere class (draft)
   public:
-    void setCenter(double c_){
-      c = c_;
+    void setCenter(double x_, double y_, double z_){
+      x = x_;
+      y = y_;
+      z = z_;
     }
 
-    double getCenter(){
-      return c;
+    double getX(){
+      return x;
+    }
+
+    double getY(){
+      return y;
+    }
+
+    double getZ(){
+      return z;
     }
 
     void setRadius(double r_){
@@ -80,7 +90,7 @@ float g_framesPerSecond{0.f};
 
 
   private:
-    double c, r, M;//center, radius, and Material respectively
+    double x, y, z, r, M;//center, radius, and Material respectively
 }*/
 
 ////////////////////////////////////////////////////////////////////////////////
