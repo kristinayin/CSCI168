@@ -52,46 +52,54 @@ float g_framesPerSecond{0.f};
 
 //hardcode camera coordinate frame
 
-/*class sphere(){//might have to make a sphere class (draft)
+/*
+class Material(){
+
   public:
-    void setCenter(double x_, double y_, double z_){
-      x = x_;
-      y = y_;
-      z = z_;
+    //ambient lighting: float a = ka*Ia;
+    //diffuse lighting: float d = kd*Id*max(0, n*l);
+    //specular lighting: float s = ks*Is*(max(0, v*h))^p;
+    glm::vec4 ka(0.f, 0.f, 0.f, 0.f);
+    glm::vec4 Ia(0.f, 0.f, 0.f, 0.f);
+
+    glm::vec4 kd(0.f, 0.f, 0.f, 0.f);
+    glm::vec4 Id(0.f, 0.f, 0.f, 0.f);
+    glm::vec3 n(0.f, 0.f, 0.f);
+    glm::vec4 nNew = glm::vec4(n, 0.f);
+    glm::vec3 l(0.f, 0.f, 0.f);
+    glm::vec4 lNew = glm::vec4(l, 0.f);
+
+    glm::vec4 ks(0.f, 0.f, 0.f, 0.f);
+    glm::vec4 Is(0.f, 0.f, 0.f, 0.f);
+    glm::vec3 v(0.f, 0.f, 0.f);
+    glm::vec4 vNew = glm::vec4(v, 0.f);
+    //h vector is something related to v and l
+
+
+}//prob make a function
+*/
+//maybe create a function for each of the types of materials
+
+class Sphere(){//might have to make a sphere class
+  public:
+
+    float r;//the radius of the sphere and material M
+
+    Sphere(){//default constructor
+      glm::vec3 p(0.f, 0.f, 0.f);//center of the sphere
+      r = 1.0;
     }
 
-    double getX(){
-      return x;
-    }
-
-    double getY(){
-      return y;
-    }
-
-    double getZ(){
-      return z;
-    }
-
-    void setRadius(double r_){
-      r = r_;
-    }
-
-    double getCenter(){
-      return r;
-    }
-
-    void setCenter(double M_){
-      M = M_;
-    }
-
-    double getCenter(){
-      return M;
+    Sphere(float x, float y, float z, float r_){
+      glm::vec3 p(x, y, z);
+      r_ = r;
+      
     }
 
 
   private:
-    double x, y, z, r, M;//center, radius, and Material respectively
-}*/
+    float r;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief Initialize GL settings
