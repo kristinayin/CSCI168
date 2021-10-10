@@ -76,9 +76,22 @@ class Material(){
     //h vector is something related to v and l
 
 
-}//prob make a function
+}//prob make a function for the materials
 */
 //maybe create a function for each of the types of materials
+
+glm::vec4 ambient(){
+
+}
+
+glm::vec4 diffuse(){
+
+}
+
+glm::vec4 specular(){
+  
+}
+
 
 class Sphere(){//might have to make a sphere class
   public:
@@ -96,9 +109,13 @@ class Sphere(){//might have to make a sphere class
       
     }
 
+    void ambient(){
+
+    }
+
 
   private:
-    float r;
+    //float r;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
