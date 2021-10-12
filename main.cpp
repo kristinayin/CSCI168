@@ -59,37 +59,64 @@ class Material(){
     //ambient lighting: float a = ka*Ia;
     //diffuse lighting: float d = kd*Id*max(0, n*l);
     //specular lighting: float s = ks*Is*(max(0, v*h))^p;
-    glm::vec4 ka(0.f, 0.f, 0.f, 0.f);
-    glm::vec4 Ia(0.f, 0.f, 0.f, 0.f);
 
-    glm::vec4 kd(0.f, 0.f, 0.f, 0.f);
-    glm::vec4 Id(0.f, 0.f, 0.f, 0.f);
-    glm::vec3 n(0.f, 0.f, 0.f);
-    glm::vec4 nNew = glm::vec4(n, 0.f);
-    glm::vec3 l(0.f, 0.f, 0.f);
-    glm::vec4 lNew = glm::vec4(l, 0.f);
+    glm::vec4 ambient(){
+      glm::vec4 ka(0.f, 0.f, 0.f, 0.f);
+      glm::vec4 Ia(0.f, 0.f, 0.f, 0.f);
+    }
 
+  glm::vec4 diffuse(){
+      glm::vec4 kd(0.f, 0.f, 0.f, 0.f);
+      glm::vec4 Id(0.f, 0.f, 0.f, 0.f);
+      glm::vec3 n(0.f, 0.f, 0.f);
+      glm::vec4 nNew = glm::vec4(n, 0.f);
+      glm::vec3 l(0.f, 0.f, 0.f);
+      glm::vec4 lNew = glm::vec4(l, 0.f);
+  }
+
+  glm::vec4 specular(){
     glm::vec4 ks(0.f, 0.f, 0.f, 0.f);
     glm::vec4 Is(0.f, 0.f, 0.f, 0.f);
     glm::vec3 v(0.f, 0.f, 0.f);
     glm::vec4 vNew = glm::vec4(v, 0.f);
     //h vector is something related to v and l
+  }
 
 
 }//prob make a function for the materials
 */
 //maybe create a function for each of the types of materials
 
-glm::vec4 ambient(){
+glm::vec4 ambient(float xk, float yk, float zk, float xa, float ya, float za){
+    glm::vec4 ka(xk, yk, zk, 0.f);
+    glm::vec4 Ia(xa, ya, za, 0.f);
+    glm::vec4 ambientAns = glm::compMul(ka)*glm::compMul(Ia);//or glm::compMul(ka, Ia)
+    return ambientAns;
 
 }
 
 glm::vec4 diffuse(){
-
+    glm::vec4 kd(0.f, 0.f, 0.f, 0.f);
+    glm::vec4 Id(0.f, 0.f, 0.f, 0.f);
+    glm::vec3 n(0.f, 0.f, 0.f);
+    glm::vec4 nNew = glm::vec4(n, 0.f);
+    glm::vec3 l(0.f, 0.f, 0.f);
+    glm::vec4 lNew = glm::vec4(l, 0.f);
+    glm::vec4 diffuseAns = glm::compMul(ka)*glm::compMul(Ia)*glm::max(0.f, glm::dot(nNew, lNew));
+    retrun diffuseAns;
 }
 
 glm::vec4 specular(){
-  
+    glm::vec4 ks(0.f, 0.f, 0.f, 0.f);
+    glm::vec4 Is(0.f, 0.f, 0.f, 0.f);
+    glm::vec3 v(0.f, 0.f, 0.f);
+    glm::vec4 vNew = glm::vec4(v, 0.f);
+    //h vector is something related to v and l
+    glm::vec3 h = (glm::compAdd(v)+glm::compAdd(l));
+    glm::vec4 hNew = glm::vec4(h, 0.f);
+    glm::vec4 specularAns = glm::compMul(ks)*glm::compMul(Is)*glm::max(0.f, glm::dot(vNew, hNew));
+
+    return specularAns;
 }
 
 
@@ -101,16 +128,13 @@ class Sphere(){//might have to make a sphere class
     Sphere(){//default constructor
       glm::vec3 p(0.f, 0.f, 0.f);//center of the sphere
       r = 1.0;
+      //do we need surface area and volume of sphere?
     }
 
     Sphere(float x, float y, float z, float r_){
       glm::vec3 p(x, y, z);
       r_ = r;
       
-    }
-
-    void ambient(){
-
     }
 
 
