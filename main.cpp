@@ -40,10 +40,6 @@ float g_framesPerSecond{0.f};
 
 //point light emanates from a point l in all directions
 
-//3 different types of lighting involved: ambient intensity (Ia), diffuse lighting (Id), spectula lighting (Is)
-
-//3 different types of color based on material composition: ambient color (ka), diffuse color (kd), specular color (ks) w/ shininess p
-
 //hardcode camera coordinate frame
 
 struct Material(){//material structure
