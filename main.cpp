@@ -35,63 +35,7 @@ float g_framesPerSecond{0.f};
 
 ////////////////////////////////////////////////////////////////////////////////
 // Functions
-//To-Do List:
-//scene with a ground plane with a normal n=y axis centered on p=(0,0,0)
 
-//creating a sphere class or function (not sure what to do)
-//what we need for sphere:
-// *center c
-// *radius r
-// *material M
-
-//point light emanates from a point l in all directions
-
-//3 different types of lighting involved: ambient intensity (Ia), diffuse lighting (Id), spectula lighting (Is)
-
-//3 different types of color based on material composition: ambient color (ka), diffuse color (kd), specular color (ks) w/ shininess p
-
-//hardcode camera coordinate frame
-
-/*class sphere(){//might have to make a sphere class (draft)
-  public:
-    void setCenter(double x_, double y_, double z_){
-      x = x_;
-      y = y_;
-      z = z_;
-    }
-
-    double getX(){
-      return x;
-    }
-
-    double getY(){
-      return y;
-    }
-
-    double getZ(){
-      return z;
-    }
-
-    void setRadius(double r_){
-      r = r_;
-    }
-
-    double getCenter(){
-      return r;
-    }
-
-    void setCenter(double M_){
-      M = M_;
-    }
-
-    double getCenter(){
-      return M;
-    }
-
-
-  private:
-    double x, y, z, r, M;//center, radius, and Material respectively
-}*/
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief Initialize GL settings
