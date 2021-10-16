@@ -143,6 +143,16 @@ keyCallback(GLFWwindow* _window, int _key, int _scancode,
   }
 }
 
+class ray(){
+  glm::vec3 point(0.f, 0.f, 0.f);
+  glm::vec3 vec(0.f, 0.f, 0.f);
+  ray();
+  ray(vec3 p, vec3 v){
+    point = p;
+    vec = v;
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Main
 
@@ -152,6 +162,8 @@ keyCallback(GLFWwindow* _window, int _key, int _scancode,
 /// @param _argv Command line arguments
 /// @return Application success status
 int
+
+
 main(int _argc, char** _argv) {
   //////////////////////////////////////////////////////////////////////////////
   // Initialize
