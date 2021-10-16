@@ -37,12 +37,18 @@ float g_framesPerSecond{0.f};
 // Functions
 
 glm::vec3 direction(float tau, float sigma, float focal){
-  
+  glm::vec3 w(0.f, 0.f, -1.f);
+  glm::vec3 u(1.f, 0.f, 0.f);
+  glm::vec3 v(0.f, 1.f, 0.f);
+  glm::vec3 dir;
+  dir= focal*w + tau*u + sigma*v;
+  return dir;
 }
 
 ray generateRay(float tau, float sigma const Camera& camera){
   ray r;
   r.point= camera.eye;
+  r.
 }
 //To-Do List:
 //hardcode camera coordinate frame
