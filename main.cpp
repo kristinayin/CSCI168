@@ -122,6 +122,8 @@ struct Material(){//material structure
 
 
 class Sphere(){//might have to make a sphere class
+
+  float r;
   public:
     Sphere(){//default constructor
       glm::vec3 p(0.f, 0.f, 0.f);//center of the sphere
@@ -135,9 +137,6 @@ class Sphere(){//might have to make a sphere class
       
     }
 
-
-  private:
-    float r;//the radius of the sphere
 }
 
 ////////////////////////////////////////////////////////////////////////////////
