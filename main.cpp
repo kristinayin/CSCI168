@@ -38,8 +38,14 @@ float g_framesPerSecond{0.f};
 //To-Do List:
 //hardcode camera coordinate frame
 
-void camera(){
-  
+class camera(){
+  glm::vec3 eye(0.f, 0.f, 0.f);
+  camera();
+  camera(float x, float y, float z){
+    eye[0]=x;
+    eye[1]=y;
+    eye[2]=z;
+  } 
 }
 
 
