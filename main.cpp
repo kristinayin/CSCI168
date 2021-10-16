@@ -111,8 +111,7 @@ struct Material(){//material structure
     glm::vec4 Is(xI, yI, zI, 0.f);
     glm::vec3 v(0.f, 0.f, 0.f);
     glm::vec4 vNew = glm::vec4(v, 0.f);
-    //h vector is something related to v and l
-    glm::vec3 h = (v+l);
+    glm::vec3 h = (v+l)/glm::vec3 length(v+1);
     glm::vec4 hNew = glm::vec4(h, 0.f);
     glm::vec4 specularAns = ks*Is*(glm::pow(glm::max(0.f, glm::dot(vNew, hNew)), p));
     return specularAns;
