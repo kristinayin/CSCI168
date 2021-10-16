@@ -35,10 +35,15 @@ float g_framesPerSecond{0.f};
 
 ////////////////////////////////////////////////////////////////////////////////
 // Functions
+
+ray generateRay(float tau, float sigma const Camera& camera){
+  ray r;
+  r.point= camera.eye;
+}
 //To-Do List:
 //hardcode camera coordinate frame
 
-class camera(){
+class Camera(){
   glm::vec3 eye(0.f, 0.f, 0.f);
   camera();
   camera(float x, float y, float z){
