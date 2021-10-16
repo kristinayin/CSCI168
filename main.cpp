@@ -40,6 +40,49 @@ float g_framesPerSecond{0.f};
 
 //point light emanates from a point l in all directions
 
+//i, j is which cell on the view plane
+//for each column i do
+//  for each row j do 
+//    generate a ray origin and direction
+//
+//    find the first intersection point of the ray
+//
+//    shade the ray intersection
+/*
+//generate a ray origin + direction from perspective view
+Ray genertate_ray(int col, int row, const Camera& camera){//make a ray class
+  Ray r;
+  r.origin = camera.eye();
+}
+
+//For each light source do
+//  computer ambient, diffuse, and specular
+//  add to final color
+
+glm::vec4 getColor(const vector<Light>& lights, const Material& material, const glm::vec3& point, const::vec3& normal){
+
+  for (const Light& light : lights){
+    glm::vec4 ambient = 
+    glm::vec4 diffuse = 
+    glm::vec4 specular = 
+    final_color += ambient + diffuse + specular;
+  }
+
+  return final_color;
+
+}
+
+
+
+class Camera{
+  public:
+    Camera();
+
+    const glm::vec3& eye() { return m_eye; }
+  private:
+    glm::vec3 eye;
+}
+*/
 //hardcode camera coordinate frame
 
 struct Material(){//material structure
