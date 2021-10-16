@@ -36,6 +36,10 @@ float g_framesPerSecond{0.f};
 ////////////////////////////////////////////////////////////////////////////////
 // Functions
 
+glm::vec3 direction(float tau, float sigma, float focal){
+  
+}
+
 ray generateRay(float tau, float sigma const Camera& camera){
   ray r;
   r.point= camera.eye;
