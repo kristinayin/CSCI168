@@ -35,7 +35,7 @@ float g_framesPerSecond{0.f};
 
 ////////////////////////////////////////////////////////////////////////////////
 // Functions
-
+/*
 glm::vec3 direction(float tau, float sigma, float focal){
   glm::vec3 w(0.f, 0.f, -1.f);
   glm::vec3 u(1.f, 0.f, 0.f);
@@ -62,8 +62,7 @@ class Camera(){
     eye[2]=z;
   } 
 }
-
-
+*/
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief Initialize GL settings
 void
@@ -170,6 +169,35 @@ keyCallback(GLFWwindow* _window, int _key, int _scancode,
   }
 }
 
+void rayCast(const Camera& camera, float length, float height){
+  for(int x=0; x<length; x++){
+    for(int y=0; y<height; y++){
+      
+    }
+  }
+}
+
+class color(){
+  glm::vec4 rgb;
+  color(){
+    glm::vec4 rgb = glm::vec4(0.f,0.f,0.f,0.f);
+  }
+  color(float R, float G, float B, float O){
+    glm::vec4 rgb = glm::vec4(R,G,B,O);
+  }
+}
+
+class ray(){
+  glm::vec3 point(0.f, 0.f, 0.f);
+  glm::vec3 vec(0.f, 0.f, 0.f);
+  color RGB();
+  ray();
+  ray(vec3 p, vec3 v){
+    point = p;
+    vec = v;
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Main
 
@@ -179,6 +207,8 @@ keyCallback(GLFWwindow* _window, int _key, int _scancode,
 /// @param _argv Command line arguments
 /// @return Application success status
 int
+
+
 main(int _argc, char** _argv) {
   //////////////////////////////////////////////////////////////////////////////
   // Initialize
