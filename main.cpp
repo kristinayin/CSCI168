@@ -45,10 +45,10 @@ glm::vec3 direction(float tau, float sigma, float focal){
   return dir;
 }
 
-ray generateRay(float tau, float sigma const Camera& camera){
+ray generateRay(float tau, float sigma, const Camera& camera){
   ray r;
   r.point= camera.eye;
-  r.vec=direction(tau,sigma, 1.f);
+  r.vec= direction(tau,sigma, 1.f);
 }
 //To-Do List:
 //hardcode camera coordinate frame
