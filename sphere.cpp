@@ -63,11 +63,15 @@ class Plane(){
 */
 
 class Plane(){
-  glm::vec3 p(0.f, 0.f, 0,f);
+  glm::vec3 p(0.f, -1.f, 0,f);
   glm::vec3 n(0.f, 0.f, 0.f);
-  
-  
+  Plane();
+  Plane(float x, float y, float z, float u, float v, float w){
+    p= glm::vec3(x,y,z);
+    n= glm::vec3(u,v,w);
+  }
 }
+  
 struct Material(){//material structure
 
   glm::vec4 ambient(float xk, float yk, float zk, float xI, float yI, float zI){
