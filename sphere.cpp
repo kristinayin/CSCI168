@@ -51,11 +51,16 @@ class Camera{
 }
 */
 //hardcode camera coordinate frame
-
+/*
+//Kristina's Plane Class
 class Plane(){
-  
+  public:
+    float a, b, c, d;
+    Plane(float a = 0.0, float b = 0.0, float c = 1.0, float d = 0.0);
+    Plane(Point p1, Point p2, Point p3);
+    Vector normal() {return Vector(a, b, c);}
 }
-
+*/
 struct Material(){//material structure
 
   glm::vec4 ambient(float xk, float yk, float zk, float xI, float yI, float zI){
