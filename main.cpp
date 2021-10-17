@@ -35,7 +35,7 @@ float g_framesPerSecond{0.f};
 
 ////////////////////////////////////////////////////////////////////////////////
 // Functions
-/*
+
 glm::vec3 direction(float tau, float sigma, float focal){
   glm::vec3 w(0.f, 0.f, -1.f);
   glm::vec3 u(1.f, 0.f, 0.f);
@@ -62,7 +62,7 @@ class Camera(){
     eye[2]=z;
   } 
 }
-*/
+
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief Initialize GL settings
 void
