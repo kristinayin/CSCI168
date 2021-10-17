@@ -36,6 +36,16 @@ float g_framesPerSecond{0.f};
 ////////////////////////////////////////////////////////////////////////////////
 // Functions
 
+float tauVal(float col, float right, float left, float pixelX){//finding the value of tau
+  float tau = left + ((right - left)/pixelX)*(col + 0.5);
+  return tau;
+}
+
+float sigmaVal(float row, float top, float bott, float pixelY){//finding the value of sigma
+  float sigma = bott + ((top - bott)/pixelY)*(row + 0.5);
+  return sigma;
+}
+
 //This calculates the direction of a ray based 
 //on the tau and theta value on the viewport
 glm::vec3 direction(float tau, float sigma, float focal){
@@ -53,8 +63,6 @@ Ray generateRay(float tau, float sigma, const Camera& camera){
   r.point= camera.eye;
   r.vec= direction(tau,sigma, 1.f);
 }
-//To-Do List:
-//hardcode camera coordinate frame
 
 //camera
 class Camera(){
@@ -221,10 +229,7 @@ keyCallback(GLFWwindow* _window, int _key, int _scancode,
 /// @param _argc Count of command line arguments
 /// @param _argv Command line arguments
 /// @return Application success status
-int
-
-
-main(int _argc, char** _argv) {
+int main(int _argc, char** _argv) {
   //////////////////////////////////////////////////////////////////////////////
   // Initialize
   std::cout << "Initializing GLFWWindow" << std::endl;
