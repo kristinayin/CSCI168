@@ -61,6 +61,13 @@ class Plane(){
     Vector normal() {return Vector(a, b, c);}
 }
 */
+
+class Plane(){
+  glm::vec3 p(0.f, 0.f, 0,f);
+  glm::vec3 n(0.f, 0.f, 0.f);
+  
+  
+}
 struct Material(){//material structure
 
   glm::vec4 ambient(float xk, float yk, float zk, float xI, float yI, float zI){
