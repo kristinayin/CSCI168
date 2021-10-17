@@ -1,3 +1,5 @@
+#include "GLInclude.h"
+
 //To-Do List:
 //scene with a ground plane with a normal n=y axis centered on p=(0,0,0)
 
