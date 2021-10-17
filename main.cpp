@@ -36,12 +36,12 @@ float g_framesPerSecond{0.f};
 ////////////////////////////////////////////////////////////////////////////////
 // Functions
 
-float tauVal(float col, float right, float left, float pixelX){//finding the value of tau
+float tauVal(float col, float right, float left, float pixelX){//finding the value of tau (x-axis)
   float tau = left + ((right - left)/pixelX)*(col + 0.5);
   return tau;
 }
 
-float sigmaVal(float row, float top, float bott, float pixelY){//finding the value of sigma
+float sigmaVal(float row, float top, float bott, float pixelY){//finding the value of sigma (y-axis)
   float sigma = bott + ((top - bott)/pixelY)*(row + 0.5);
   return sigma;
 }
@@ -76,6 +76,7 @@ class Camera(){
 }
 
 void rayCast(const Camera& camera, float length, float height){
+  //maybe use a vector to store data for input of each pixel??
   for(int x=0; x<length; x++){
     for(int y=0; y<height; y++){
       Ray r();
