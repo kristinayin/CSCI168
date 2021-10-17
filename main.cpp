@@ -143,6 +143,16 @@ keyCallback(GLFWwindow* _window, int _key, int _scancode,
   }
 }
 
+class color(){
+  glm::vec4 rgb;
+  color(){
+    glm::vec4 rgb = glm::vec4(0.f,0.f,0.f,0.f);
+  }
+  color(float R, float G, float B, float O){
+    glm::vec4 rgb = glm::vec4(R,G,B,O);
+  }
+}
+
 class ray(){
   glm::vec3 point(0.f, 0.f, 0.f);
   glm::vec3 vec(0.f, 0.f, 0.f);
