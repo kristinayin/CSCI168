@@ -40,6 +40,8 @@ float g_framesPerSecond{0.f};
 
 //point light emanates from a point l in all directions
 
+///////
+//Jory's pseudocode
 //i, j is which cell on the view plane
 //for each column i do
 //  for each row j do 
@@ -71,7 +73,7 @@ glm::vec4 getColor(const vector<Light>& lights, const Material& material, const 
   return final_color;
 
 }
-
+///////
 
 
 class Camera{
@@ -84,6 +86,10 @@ class Camera{
 }
 */
 //hardcode camera coordinate frame
+
+class Plane(){
+  
+}
 
 struct Material(){//material structure
 
