@@ -110,7 +110,7 @@ struct Material(){//material structure
     //p is shininess value
     glm::vec4 ks(xk, yk, zk, 0.f);//material for specular
     glm::vec4 Is(xI, yI, zI, 0.f);//intensity for specular
-    glm::vec3 v(0.f, 0.f, 0.f);
+    glm::vec3 v(0.f, 0.f, 0.f);//direction of camera
     glm::vec4 vNew = glm::vec4(v, 0.f);//converted to vec4
     glm::vec3 h = (v+l)/glm::vec3 length(v+l);
     glm::vec4 hNew = glm::vec4(h, 0.f);//converted to vec4
