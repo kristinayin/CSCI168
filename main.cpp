@@ -142,6 +142,8 @@ keyCallback(GLFWwindow* _window, int _key, int _scancode,
     }
   }
 }
+//Ray generation forloop
+//for i
 
 class color(){
   glm::vec4 rgb;
@@ -156,6 +158,7 @@ class color(){
 class ray(){
   glm::vec3 point(0.f, 0.f, 0.f);
   glm::vec3 vec(0.f, 0.f, 0.f);
+  color RGB();
   ray();
   ray(vec3 p, vec3 v){
     point = p;
