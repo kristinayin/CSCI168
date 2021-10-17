@@ -11,6 +11,24 @@ float sigmaVal(float row, float top, float bott, float pixelY){//finding the val
   return sigma;
 }
 
+//this puts values in the point and direction of a ray instance
+Ray generateRay(float tau, float sigma, const Camera& camera){
+  Ray r();
+  r.point= camera.eye;
+  r.vec= direction(tau,sigma, 1.f);
+}
+
+Ray planeIntersection(Ray i, Plane j){
+  if(glm::dot(i.vec, j.n)>0){
+    float t = glm::dot((j.p-i.point), j.n)/glm::dot(i.vec, j.n);
+    if(t>0){
+      Ray result(i.point + t*i.vec, plane.n);
+      return result;
+    }
+  }
+  //return something else??
+}
+
 //This calculates the direction of a ray based 
 //on the tau and theta value on the viewport
 glm::vec3 direction(float tau, float sigma, float focal){
@@ -22,12 +40,7 @@ glm::vec3 direction(float tau, float sigma, float focal){
   return dir;
 }
 
-//this puts values in the point and direction of a ray instance
-Ray generateRay(float tau, float sigma, const Camera& camera){
-  Ray r();
-  r.point= camera.eye;
-  r.vec= direction(tau,sigma, 1.f);
-}
+
 
 //camera
 class Camera(){
