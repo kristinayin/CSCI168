@@ -29,7 +29,7 @@ Ray planeIntersection(Ray i, Plane j){
   //return something else??
 }
 
-//This calculates the direction of a ray based 
+//This calculates the direction of a ray based
 //on the tau and theta value on the viewport
 glm::vec3 direction(float tau, float sigma, float focal){
   glm::vec3 w(0.f, 0.f, -1.f);
@@ -50,7 +50,7 @@ class Camera(){
     eye[0]=x;
     eye[1]=y;
     eye[2]=z;
-  } 
+  }
 }
 
 void rayCast(const Camera& camera, float length, float height){
