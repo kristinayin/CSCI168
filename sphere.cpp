@@ -71,6 +71,19 @@ class Plane(){
     n= glm::vec3(u,v,w);
   }
 }
+
+class Sphere(){//might have to make a sphere class
+  float rad = 1.0;
+  glm::vec3 c(0.f, 0.f, 0.f);//center of the sphere is origin
+  glm::vec3 n(0.f, 0.f, 0.f);//normal of the sphere
+  Sphere();//default constructor
+  Sphere(float x, float y, float z, float r_){//user inputs their own radius and center
+    center = glm::vec3 (x,y,z);
+    rad = r_;
+    //n = (x-center)/radius where x is the point along the ray
+  }
+
+}
   
 struct Material(){//material structure
 
@@ -109,20 +122,3 @@ struct Material(){//material structure
 }//prob make a function for the materials
 
 
-class Sphere(){//might have to make a sphere class
-
-  float r;
-  public:
-    Sphere(){//default constructor
-      glm::vec3 p(0.f, 0.f, 0.f);//center of the sphere is origin
-      r = 1.0;
-      
-    }
-
-    Sphere(float x, float y, float z, float r_){//user inputs their own radius and center
-      glm::vec3 p(x, y, z);
-      r_ = r;
-      
-    }
-
-}
