@@ -19,7 +19,7 @@ Ray generateRay(float tau, float sigma, const Camera& camera){
 }
 
 Ray planeIntersection(Ray i, Plane j){
-  if(glm::dot(i.vec, j.n)>0){
+  if(glm::dot(i.vec, j.n)>0){//if vector i dot normal greater than 0
     float t = glm::dot((j.p-i.point), j.n)/glm::dot(i.vec, j.n);
     if(t>0){
       Ray result(i.point + t*i.vec, plane.n);
@@ -27,6 +27,27 @@ Ray planeIntersection(Ray i, Plane j){
     }
   }
   //return something else??
+}
+
+Ray sphereIntersection(Ray i, Sphere j){
+  float A = glm::pow(i.vec, 2.f);
+  float B = glm::dot(2*i.vec, (i.point - j.center));//need to add center in sphere class
+  float C = glm::pow((i.point - j.center), 2.f) - glm::pow(j.radius, 2.f);//need to add radius in sphere class
+
+  //both formulas use the discriminant
+  float t1 = (-B+glm::sqrt(glm::pow(B, 2) - 4*A*C))/(2*A);
+  float t2 = (-B+glm::sqrt(glm::pow(B, 2) - 4*A*C))/(2*A);
+
+  if(t1<t2 && t1>0){
+    Ray result(i,point + t1*i.vec, Sphere.n);//need to add normal to the sphere
+  }else if(t2<t1 && t2>0){
+    Ray result(i,point + t2*i.vec, Sphere.n);//need to add normal to the sphere
+  }else{
+    //return something when both t1 and t2 are less than 0
+  }
+
+  return result;
+
 }
 
 //This calculates the direction of a ray based
