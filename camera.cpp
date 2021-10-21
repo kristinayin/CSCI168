@@ -16,7 +16,7 @@ Ray generateRay(float tau, float sigma, const Camera& camera){
   Ray r();
   r.point= camera.eye;
   r.vec= direction(tau,sigma, 1.f);
-  //return r.vec
+  return r;
   //forgot to return some Ray; not sure if it's the right syntax
 }
 
