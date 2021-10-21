@@ -77,14 +77,13 @@ class Camera(){
   }
 }
 
-void rayCast(const Camera& camera, float length, float height, ){
+void rayCast(const Camera& camera, float length, float height, Plane pp){
   //maybe use a vector to store data for input of each pixel??
   for(int x=0; x<length; x++){
     for(int y=0; y<height; y++){
       Ray r();
       r= generateRay(x,y,camera);
-
-      planeIntersection(r,)
+      Ray collisionRay()= planeIntersection(r,pp);
 
     }
   }
