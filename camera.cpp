@@ -24,10 +24,11 @@ Ray planeIntersection(Ray i, Plane j){
   if(glm::dot(i.vec, j.n)>0){//if vector i dot normal greater than 0
     float t = glm::dot((j.p-i.point), j.n)/glm::dot(i.vec, j.n);
     if(t>0){
-      Ray result(i.point + t*i.vec, plane.n);
+      Ray result(i.point + t*i.vec, plane.n);//result is a ray with the point of collision and the normal of the plane
       return result;
-    }
+    } 
   }
+  return 0;
   //return something else??
 }
 
@@ -76,12 +77,14 @@ class Camera(){
   }
 }
 
-void rayCast(const Camera& camera, float length, float height){
+void rayCast(const Camera& camera, float length, float height, ){
   //maybe use a vector to store data for input of each pixel??
   for(int x=0; x<length; x++){
     for(int y=0; y<height; y++){
       Ray r();
       r= generateRay(x,y,camera);
+
+      planeIntersection(r,)
 
     }
   }
